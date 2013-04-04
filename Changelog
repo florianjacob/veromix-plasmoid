@@ -1,0 +1,205 @@
+0.18.3 - 14.6.2012
+- fix encoding problem in PulseSource (Fix Debian bug #677445).
+
+0.18.2 - 14.6.2012
+- fix encoding problem in PulseSource (Issue 101).
+
+0.18.1 - 12.6.2012
+- fix icon install
+- fix path of veromix-service-qt.py
+
+0.18.0 - 11.6.2012
+- python3 compatibility.
+- New sourcecode structure, new makefile.
+- Big refactoring to share code with the gtk frontend.
+- Update russian, italian and german translations.
+- Enable volume meter via context menu.
+- Do not name monitor-sinks created by veromix (always ascii->utf8 problems).
+- Renamed VeromixServiceMain.py to veromix-service-qt.py
+
+0.17.0 - 25.4.2012
+- LADSPA preset support (load, save) - file format compatible with python-equalizer.
+- Dynamically detect installed LADSPA effects.
+- Remove "Add Effect" Button. Choose effects and presets (to be added) via context-menu.
+- Initial support for keyboard navigation (Tab and Shift-T between streams, change volume with arrwos).
+
+0.16.2 - 4.4.2012
+- Invert/fix the behaviour of horizontal scrolling over the icon in the systemtray/panel.
+- Fix: Plasmoid icon changes its size and position when plasmoid settings is changed.
+- Disable background chooser in settings dialog for popup applets.
+- Disable popup-mode checkbox in settings dialog for planar applets.
+
+0.16.1 - 17.2.2012
+- fix add effects button not clickable
+
+0.16.0 - 13.2.2012
+- Replace analog meter with vertical meter below slider.
+- Adding an option to autostart meters.
+- Combine sinks by dragging on sink on another.
+- Catch expections when veromix service does not startup.
+- Ticks below sliders instead of above and below, when max volume >100.
+- New option to show values (precentage) of each slider.
+- New serbian translations.
+- Added minimum size, fixing  issue 28 .
+- Changed default background from transparent to standard.
+- Changed meters to hidden by default.
+- Fix: Icon of sink-input sometimes shows the icon of another application.
+
+0.15.1 - 5.2.2012
+- Make sure we got unicode strings for ports before displaying them.
+- Fix bad looking label in unlocked view.
+- switch from svn to git.
+
+0.15.0 - 30.1.2012
+- Support for changing ports of sinks by Jonathan Challinger.
+  Fixes Issue 85: Cannot switch microphone inputs.
+- Update italian translation.
+
+0.14.1 - 28.1.2012
+- Fix: Record streams no longer showing up in veromix.
+- Rearranging context menu items.
+- Updating translation files.
+
+0.14.0 - 28.1.2012
+- Adding right click context menu.
+- The button on the right opens the context menu.
+- Moving all channel related settings to the context menu (dropping in channel checkbox and/or comboboxes).
+- Adding a configuration option to hide the context menu button.
+- Adding a fallback for the brooken mpris support in deadbeef.
+
+0.13.2 - 13.1.2012
+- fix: Dropdownbox of audiooutput lies not on top of the sliders (Issue 37).
+- enable "apply" button when the user changes settings in the settings dialog.
+- add an option to disable album art (fixes issue 75).
+
+0.13.1 - 14.9.2012
+- fix sorting of sources
+- fix sink-output selection in combobox
+- fix label of tooltip
+- improve label position for bigger fonts
+
+0.13.0 - 26.7.2011
+- adding support for ladspa effects (equalizer an others)
+- changed sorting of sinks (alphabetically)
+- fix regression: Default sink not detected (no monochrom icons)
+- fix sink inputs having the wrong stream or application name
+- fix expander button below meter
+- setting better titles for some known applications (patch by Kai Uwe Broulik)
+
+0.12.1 - 25.6.2011
+- fix zerodevision in media player controls
+- updating italian translations
+- installed a workaround to fallback on python2 where python3 is default.
+
+0.12.0 - 13.6.2011
+- better settings-ui for mediaplayer controls
+- adding position, length and seek to mediaplayer controls
+- workaround title for "knotify" and "npviewer.bin" (patch by Bajk...@googlemail.com)
+- new configuration option: "Show tooltip/notifications"
+
+0.11.2 - 28.3.2011
+- fix switching bluetooth profiles
+- improve layout of settings widgets (patch by proDOOM...@gmail.com)
+- improve packaging
+
+0.11.1 - 21.3.2011
+- added italian translations
+
+0.11.0 - 19.3.2011
+- sound card profiles support (aka quick switching between hdmi and regular)
+- show slider ticks if max volume is > 100%
+- tabbed view: Fixed not correctly removed meters
+- new russian translations
+
+0.10.1 - 14.3.2011
+- fix issue 39:   Settings in veromix are always default
+- workaround nowplaying DataEngine returns invalid (and not existing) player named "players"
+
+0.10 - 12.3.2011
+- expander button
+- new config options
+    - show/hide meter
+    - ability to turn the master volume above 100% (like gnome applet)
+    - mute if volume reaches zero
+    - configure global shortcuts
+- only connect peak-meters if requested by the user (click on meter) - saves CPU cycles
+
+0.9.1 - 20.12.2010
+- new UI
+- per channel volume control (mono, stereo, dolby 5.1 ... )
+- better mpris2 support (don't poll - listen for notifications)
+- UI components are no longer deleted, they are stored and reused
+- improved resizing behaviour
+
+0.9.0 - 03.12.2010
+- nowplaying integration
+- localization
+- more configuration options
+
+0.8.7 - 26.11.2010
+- bugfix
+- merged configuration dialogs
+- improved error-messages with link to the wiki
+
+0.8.6 - 23.11.2010
+- global keyboard shortcuts
+
+0.8.5 - 19.11.2010
+- monochrome icons (kde 4.5)
+- configuration interface (more to come there)
+- autohide
+- panel icon shows 4 states: mute low medium high
+- tooltip over panel icon
+- better scrolling behaviour
+0.8.4 - 25.10.2010
+- fix regression (SinkInputs not appearing)
+0.8.3 - 25.10.2010
+- fix SinkInputs without session-id (mpd)
+- fix set volume of Sinks/SinkInputs with more than 2 channels
+0.8.2 - 22.10.2010
+- Panel icon: mute default sink with mouse middle button
+- Panel icon: increase/decrease volume of default sink with mouse wheel
+0.8.1
+- packaging fixes
+0.8 - 2.10.2010
+- control input devices (recording) - sources are only shown if at least one application is recording
+- set default output device
+- kill streams
+- information dialog with hardware information
+- don't show scrollbars when poping up from the panel
+- implemented a workaround for kde 4.4 compatibility
+- cleanup plasmoid-package
+Release Notes:
+- clicking on the meter-indicator expands the channel and offers advanced settings (kill, set as default): I' am looking for a better solution
+0.7.6 - 21.08.2010
+- bugfix: remove output device correctly
+0.7.5 - 18.08.2010
+- create directory ~/.local/share/dbus-1/services/ if it does not exist
+- mute-button shows application icon when muted
+0.7.4 - 03.08.2010
+- changed ServiceTypes=Plasma/Applet;Plasma/PopupApplet
+- use less space
+0.7.3 - 03.08.2010
+- support multiple plasmoid instances
+- resize sliders after a remove
+0.7.2 - 27.07.2010
+- dbus-initialization improved (somtimes crashed plasma-desktop). Working on support for multiple plasmoids..
+0.7.1 - 27.07.2010
+- make the dbus-service executable
+0.7 - 27.07.2010
+- fixed crash (a dbus-service is started to gather info from pulseaudio)
+- improved icon-lookup
+- store size of popup
+0.6 - 05.06.2010
+- Ordering of sources and targets: Sources are always above their correct target/ouput
+- Switch audio-target on the fly: Drag a source to the new target
+- Mute is now an IconWidget (was a PushButton) - looks differently
+0.5 - 30.3.2010
+- themed label-color (dark themes)
+- better utf8 handling
+0.4 - 23.3.2010
+- place it in your systemtray
+0.3 - 23.03.2010
+- PopupApplet -> place it in your panel
+0.2 - 7.12.2009
+- Initial Release

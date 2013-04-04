@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=org.veromix.pulseaudio.qt
+Exec=/usr/share/veromix/dbus-service/veromix-service-qt.py

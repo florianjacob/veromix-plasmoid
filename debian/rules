@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+
+%:
+	dh ${@} --with python2 --with python3
+
+override_dh_builddeb:
+	dh_builddeb -- -Zgzip -z9
+
+override_dh_python2:
+	dh_python2 -pveromix-common /usr/share/veromix/dbus-service/
+	dh_python2 -pveromix-common /usr/share/veromix/common
+	dh_python2 -pplasma-widget-veromix /usr/share/kde4/apps/plasma/plasmoids/veromix-plasmoid/contents/code/
+	dh_python2 -pveromix /usr/share/veromix/gtk/

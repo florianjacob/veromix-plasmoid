@@ -1,0 +1,71 @@
+Source: veromix
+Section: sound
+Priority: optional
+Maintainer: Nik Lutz <nik.lutz@gmail.com>
+Build-Depends: debhelper (>= 9), gettext, python, python3
+Standards-Version: 3.9.3
+Homepage: http://code.google.com/p/veromix-plasmoid/
+Vcs-Browser: http://code.google.com/p/veromix-plasmoid/source/browse/
+Vcs-Git: https://code.google.com/p/veromix-plasmoid/
+
+Package: veromix
+Architecture: all
+Depends:
+ ${misc:Depends}, ${python3:Depends}, python3-dbus, python3-gi, veromix-common
+Description: Mixer for the PulseAudio sound server (GTK+)
+ Veromix is a mixer for the PulseAudio sound server.
+ .
+ Features:
+  * control volume of each playback stream
+  * control volume of devices (hardware)
+  * control volume of input devices (microphone)
+  * move playback streams between different devices (drag icon of playback
+    stream and drop it on target device)
+  * mute/unmute (click icon)
+  * volume meter (on mouse over)
+  * PopUp-Applet (icon-representation if inside panel)
+  * can life in system tray or notification area
+  * kill playback streams
+  * set default output device
+  * Middle-click on panel icon mutes default output
+  * Mouse-wheel over panel icon increases/decreases volume of default output
+  * supports global hotkeys
+  * set volume above 100%
+ .
+ This package contains the GTK+ frontend for GNOME and others.
+
+Package: veromix-common
+Architecture: all
+Depends: ${misc:Depends}, ladspa-sdk, pulseaudio, swh-plugins
+Suggests: ${python:Depends}, python3
+Description: Mixer for the PulseAudio sound server (common)
+ Veromix is a mixer for the PulseAudio sound server.
+ .
+ This package contains the common files.
+
+Package: plasma-widget-veromix
+Architecture: all
+Depends:
+ ${misc:Depends}, ${python:Depends}, plasma-scriptengine-python,
+ python-qt4-dbus, python-xdg, veromix-common
+Description: Mixer for the PulseAudio sound server (Plasma)
+ Veromix is a mixer for the PulseAudio sound server.
+ .
+ Features:
+  * control volume of each playback stream
+  * control volume of devices (hardware)
+  * control volume of input devices (microphone)
+  * move playback streams between different devices (drag icon of playback
+    stream and drop it on target device)
+  * mute/unmute (click icon)
+  * volume meter (on mouse over)
+  * PopUp-Applet (icon-representation if inside panel)
+  * can life in system tray or notification area
+  * kill playback streams
+  * set default output device
+  * Middle-click on panel icon mutes default output
+  * Mouse-wheel over panel icon increases/decreases volume of default output
+  * supports global hotkeys
+  * set volume above 100%
+ .
+ This package contains the Plasma widget for KDE.
