@@ -32,15 +32,15 @@ install-service:
 	-find $(DESTDIR)/usr/share/locale -name "*.po" | xargs rm -f
 
 install-plasmoid: install-service
-	mkdir -p $(DESTDIR)/usr/share/kde4/apps/plasma/plasmoids/veromix-plasmoid
-	cp -a plasma/contents plasma/metadata.desktop $(DESTDIR)/usr/share/kde4/apps/plasma/plasmoids/veromix-plasmoid
+	mkdir -p $(DESTDIR)/usr/share/apps/plasma/plasmoids/veromix-plasmoid
+	cp -a plasma/contents plasma/metadata.desktop $(DESTDIR)/usr/share/apps/plasma/plasmoids/veromix-plasmoid
 
 	mkdir -p $(DESTDIR)/usr/share/kde4/services
 	ln -s ../apps/plasma/plasmoids/veromix-plasmoid/metadata.desktop $(DESTDIR)/usr/share/kde4/services/plasma-widget-veromix.desktop
-	ln -sf ../../../../../../../veromix/common $(DESTDIR)/usr/share/kde4/apps/plasma/plasmoids/veromix-plasmoid/contents/code/veromixcommon
-	ln -sf ../../../../../../veromix/data/icons $(DESTDIR)/usr/share/kde4/apps/plasma/plasmoids/veromix-plasmoid/contents/icons
-	ln -sf ../../../../../../locale $(DESTDIR)/usr/share/kde4/apps/plasma/plasmoids/veromix-plasmoid/contents/locale
-	ln -sf ../../../../../veromix/dbus-service $(DESTDIR)/usr/share/kde4/apps/plasma/plasmoids/veromix-plasmoid/dbus-service
+	ln -sf ../../../../../../../veromix/common $(DESTDIR)/usr/share/apps/plasma/plasmoids/veromix-plasmoid/contents/code/veromixcommon
+	ln -sf ../../../../../../veromix/data/icons $(DESTDIR)/usr/share/apps/plasma/plasmoids/veromix-plasmoid/contents/icons
+	ln -sf ../../../../../../locale $(DESTDIR)/usr/share/apps/plasma/plasmoids/veromix-plasmoid/contents/locale
+	ln -sf ../../../../../veromix/dbus-service $(DESTDIR)/usr/share/apps/plasma/plasmoids/veromix-plasmoid/dbus-service
 
 install-gtk: install-service
 	mkdir -p $(_VEROMIX_SHARED)
