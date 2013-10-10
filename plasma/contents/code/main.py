@@ -524,7 +524,7 @@ class VeroMixPlasmoid(plasmascript.Applet):
         self.config_ui = None
 
     def useTabs(self):
-        return self.config().readEntry("useTabs",False).toBool()
+        return self.config().readEntry("useTabs",True).toBool()
 
     def is_meter_visible(self):
         return self.config().readEntry("meter_visible",False).toBool()
@@ -536,17 +536,17 @@ class VeroMixPlasmoid(plasmascript.Applet):
         return self.config().readEntry("show_tooltip",True).toBool()
 
     def get_always_show_sources(self):
-        return self.config().readEntry("always_show_sources",False).toBool()
+        return self.config().readEntry("always_show_sources",True).toBool()
 
     def get_max_volume_value(self):
         default = 100
         return self.config().readEntry("max_volume",default).toInt()[0]
 
     def is_slider_unit_value_visible(self):
-        return self.config().readEntry("unitvalues_visible",False).toBool()
+        return self.config().readEntry("unitvalues_visible",True).toBool()
 
     def is_ladspa_enabled(self):
-        return self.config().readEntry("ladspa_enabled",True).toBool()
+        return self.config().readEntry("ladspa_enabled",False).toBool()
 
     def ladspa_save_effects_blacklist(self):
         blacklisted = []
