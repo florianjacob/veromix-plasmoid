@@ -405,16 +405,19 @@ class VeroMixPlasmoid(plasmascript.Applet):
 
         self.louder_action_editor = KKeySequenceWidget()
         self.louder_action_editor.setKeySequence( self.louder_action.globalShortcut().primary())
+        self.louder_action_editor.keySequenceChanged.connect(dialog.settingsModified)
         layout.addWidget(QLabel(i18n("Veromix volume up")), 0,0)
         layout.addWidget(self.louder_action_editor, 0,1)
 
         self.lower_action_editor = KKeySequenceWidget()
         self.lower_action_editor.setKeySequence( self.lower_action.globalShortcut().primary())
+        self.lower_action_editor.keySequenceChanged.connect(dialog.settingsModified)
         layout.addWidget(QLabel(i18n("Veromix volume down")), 1, 0)
         layout.addWidget(self.lower_action_editor, 1, 1)
 
         self.mute_action_editor = KKeySequenceWidget()
         self.mute_action_editor.setKeySequence( self.mute_action.globalShortcut().primary())
+        self.mute_action_editor.keySequenceChanged.connect(dialog.settingsModified)
         layout.addWidget(QLabel(i18n("Veromix toggle  mute")), 2, 0)
         layout.addWidget(self.mute_action_editor, 2, 1)
 

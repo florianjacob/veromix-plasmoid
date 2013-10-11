@@ -1,0 +1,242 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: veromix-0.9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-12-21 11:01+0800\n"
+"PO-Revision-Date: 2012-06-10 02:15+0100\n"
+"Last-Translator: Marguerite Su <i@marguerite.su>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Traditional Chinese\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgid ""
+"<a href=\"http://code.google.com/p/veromix-plasmoid/\">http://code.google."
+"com/p/veromix-plasmoid/</A>"
+msgstr ""
+"<a href=\"http://code.google.com/p/veromix-plasmoid/\">http://code.google."
+"com/p/veromix-plasmoid/</A>"
+
+msgid "Add Effect"
+msgstr "添加音效"
+
+msgid "Always show sources"
+msgstr "總是顯示來源"
+
+msgid "Appearance"
+msgstr "外觀"
+
+msgid "Background"
+msgstr "背景"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Chromium Browser"
+msgstr "Chromium 瀏覽器"
+
+msgid "Close manually"
+msgstr "手動關閉"
+
+msgid "Close when losing focus"
+msgstr "失去焦點時自動關閉"
+
+msgid "Default Sink"
+msgstr "默認接收器"
+
+msgid "Default device"
+msgstr "默認設備"
+
+msgid "Disconnect/kill"
+msgstr "斷開連接 / 殺死行程"
+
+msgid "Effect"
+msgstr "音效"
+
+msgid "Effects / Equalizer"
+msgstr "音效 / 等化器"
+
+msgid "Enable LADSPA effects."
+msgstr "啓用 LADSPA 音效"
+
+msgid "Event Sound"
+msgstr "事件聲音"
+
+msgid "Event Sounds"
+msgstr "事件聲音"
+
+msgid "Flash Player"
+msgstr "Flash 播放器"
+
+msgid "Form"
+msgstr "格式"
+
+msgid "Homepage"
+msgstr "首頁"
+
+msgid "Layout"
+msgstr "佈局"
+
+msgid "Main Volume"
+msgstr "主音量"
+
+msgid "Max volume value"
+msgstr "最大音量值"
+
+msgid "Media Player Controls"
+msgstr "媒體播放器控制"
+
+msgid "Media player blacklist:"
+msgstr "屏蔽的媒體播放器"
+
+msgid "Move To"
+msgstr "移動到"
+
+msgid "Mute"
+msgstr "靜音"
+
+msgid "Mute if volume reaches zero"
+msgstr "音量为 0 時静音"
+
+msgid "Muted"
+msgstr "静音"
+
+msgid "Name"
+msgstr "名稱"
+
+msgid "No background"
+msgstr "無背景"
+
+msgid "Notification "
+msgstr "系統通知"
+
+msgid "Playback"
+msgstr "回放"
+
+msgid "Popup Mode"
+msgstr "彈出模式"
+
+msgid "Ports"
+msgstr "埠"
+
+msgid "Preset"
+msgstr "預設"
+
+msgid "Presets"
+msgstr "預設"
+
+msgid "Profile"
+msgstr "配置"
+
+msgid "Pulseaudio"
+msgstr "Pulseaudio"
+
+msgid "Record"
+msgstr "錄音"
+
+msgid "Running media players:"
+msgstr "正在運行的媒體播放器:"
+
+msgid "Save"
+msgstr "保存"
+
+msgid "Save As..."
+msgstr "另存爲..."
+
+msgid "Save Preset"
+msgstr "保存預設"
+
+msgid "Show album art"
+msgstr "顯示專輯封面"
+
+msgid "Show context menu button"
+msgstr "顯示內容菜單按鈕"
+
+msgid "Show position"
+msgstr "顯示位置"
+
+msgid "Show toolip"
+msgstr "顯示提醒"
+
+msgid "Show unit values"
+msgstr "顯示單位音量值"
+
+msgid "Sound Card Profiles"
+msgstr "聲卡配置文件"
+
+msgid "Standard background"
+msgstr "標準背景"
+
+msgid ""
+"There is a problem with the backgroud-"
+"service.                                                         "
+"<ul>                                                         <li>If you just "
+"upgraded try killing the process named: VeromixServiceMain.py and relaunch "
+"this plasmoid</li>                                                         "
+"<li>If you don't know how to do that consider rebooting</li></ul><br/"
+">                                                        <a href=\"http://"
+"code.google.com/p/veromix-plasmoid/wiki/Debugging\">See wiki for more "
+"details</a> <span style=\"font-size: small;\">(right click and copy url)</"
+"span>."
+msgstr ""
+"後臺服務出現問題.<ul><li> "
+"如果你剛剛進行了升級，請嘗試殺死名爲 VeromixServiceMain.py 的行程並重啓該等離子部件</li>"
+"如果你不知道怎麼做，那就重啓系統</ul><br/>"
+"<a href=\"http://code.google.com/p/veromix-plasmoid/wiki/Debugging\">查看維基百以擷取更多信息</a> <span "
+"style=\"font-size: small;\">(右鍵複製網址)</span>."
+
+msgid "Translucent background"
+msgstr "半透明背景"
+
+msgid "Uncombine"
+msgstr "不合併"
+
+msgid "Unlock Channels"
+msgstr "解鎖聲道"
+
+msgid "Unlock channels"
+msgstr "解鎖聲道"
+
+msgid "Use KDE nowplaying dataengine"
+msgstr "使用 KDE 現在播放數據引擎"
+
+msgid "Use mpris2"
+msgstr "使用 MPris2"
+
+msgid "Use tabs"
+msgstr "使用標籤"
+
+msgid "Veromix Settings"
+msgstr "Veromix 設定"
+
+msgid "Veromix is a mixer for the Pulseaudio sound server. "
+msgstr "Veromix 是一個 Pulseaudio 聲音服務的混音器."
+
+msgid "Veromix toggle  mute"
+msgstr "Veromix 靜音開關"
+
+msgid "Veromix toggle mute"
+msgstr "Veromix 靜音開關"
+
+msgid "Veromix volume down"
+msgstr "Veromix 減小音量"
+
+msgid "Veromix volume up"
+msgstr "Veromix 增大音量"
+
+msgid "Version"
+msgstr "版本"
+
+msgid "Voice Output"
+msgstr "語音輸出"
+
+msgid "Volume Keyboard Shortcuts"
+msgstr "音量快速鍵"
+
+msgid "Volume meter"
+msgstr "音量表"
+
+msgid "X.Y"
+msgstr "X.Y"

@@ -67,6 +67,9 @@ class Label(Plasma.Label):
         self.show_unit_value = boolean
         self._set_text()
 
+    def set_meter_visible(self, boolean):
+        pass
+
 class LabelSlider(Plasma.Slider):
     volumeChanged = pyqtSignal(int)
 
