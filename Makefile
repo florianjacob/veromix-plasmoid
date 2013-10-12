@@ -25,7 +25,7 @@ install-service:
 	cp -a data/dbus-1/services/* $(DESTDIR)/usr/share/dbus-1/services
 
 	mkdir -p $(DESTDIR)/usr/share/icons
-	ln -s ../veromix/data/icons/veromix.png $(DESTDIR)/usr/share/icons/veromix.png
+	ln -sr /usr/share/veromix/data/icons/veromix.png $(DESTDIR)/usr/share/icons/veromix.png
 
 	mkdir -p $(DESTDIR)/usr/share/locale
 	cp -a data/locale/* $(DESTDIR)/usr/share/locale
@@ -36,12 +36,12 @@ install-plasmoid: install-service
 	cp -a plasma/contents plasma/metadata.desktop $(DESTDIR)/usr/share/apps/plasma/plasmoids/veromix-plasmoid
 
 	mkdir -p $(DESTDIR)/usr/share/kde4/services
-	ln -sr /usr/share/icons ${DESTDIR}/usr/share/apps/plasma/plasmoids/veromix-plasmoid/contents/
+	ln -sr /usr/share/icons $(DESTDIR)/usr/share/apps/plasma/plasmoids/veromix-plasmoid/contents/
 	ln -sr /usr/share/locale $(DESTDIR)/usr/share/apps/plasma/plasmoids/veromix-plasmoid/contents/locale
-	ln -sr /usr/share/apps/plasma/plasmoids/veromix-plasmoid/metadata.desktop ${DESTDIR}/usr/share/kde4/services/plasma-widget-veromix.desktop    $
-	ln -sr /usr/share/veromix/common ${DESTDIR}/usr/share/apps/plasma/plasmoids/veromix-plasmoid/contents/code/veromixcommon
-	ln -sr /usr/share/veromix/dbus-service ${DESTDIR}/usr/share/apps/plasma/plasmoids/veromix-plasmoid/
-	install -D data/icons/veromix-plasmoid-128.png ${DESTDIR}/usr/share/icons/veromix-plasmoid-128.png
+	ln -sr /usr/share/apps/plasma/plasmoids/veromix-plasmoid/metadata.desktop $(DESTDIR)/usr/share/kde4/services/plasma-widget-veromix.desktop    $
+	ln -sr /usr/share/veromix/common $(DESTDIR)/usr/share/apps/plasma/plasmoids/veromix-plasmoid/contents/code/veromixcommon
+	ln -sr /usr/share/veromix/dbus-service $(DESTDIR)/usr/share/apps/plasma/plasmoids/veromix-plasmoid/
+	install -D data/icons/veromix-plasmoid-128.png $(DESTDIR)/usr/share/icons/veromix-plasmoid-128.png
 
 
 install-gtk: install-service
