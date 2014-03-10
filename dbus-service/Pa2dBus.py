@@ -15,16 +15,13 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import signal
 import datetime
-import dbus
-import dbus.service
 
 #from PyQt4.QtCore import QObject
 #from PyQt4.QtCore import SIGNAL
 
 #from PyQt4 import QtCore
-from VeromixUtils import *
+from VeromixUtils import in_unicode
 
 ###
 # Pass info/signals from PA to DBUS

@@ -15,13 +15,10 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import signal
-import sys
-import dbus
-import dbus.service
+import dbus.service, sys
 
 #from PulseAudio import *
-from pulseaudio.PulseVolume import *
+from pulseaudio.PulseVolume import PulseVolume
 
 
 ###

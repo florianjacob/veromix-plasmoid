@@ -69,13 +69,13 @@ def _in_unicode(string):
 
 
 def proplist_to_dict(string):
-    dict = {}
+    dictio = {}
     lines = string.split("\n")
     for line in lines:
         arr = line.split(" = ")
         if len(arr) == 2:
-            dict[arr[0]] = in_unicode(arr[1].strip('"'))
-    return dict
+            dictio[arr[0]] = in_unicode(arr[1].strip('"'))
+    return dictio
 
 def assertEncoding(aDict):
     for key in aDict.keys():
