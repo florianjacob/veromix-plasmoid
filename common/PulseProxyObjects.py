@@ -14,25 +14,18 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import gettext
+import gettext, urllib
 i18n = gettext.gettext
 
-from .LADSPAEffects import *
+from LADSPAEffects import LADSPAEffects, LADSPAPresetLoader
 
-try:
-    import html
-except:
-    class html:
-        @staticmethod
-        def escape(arg):
-            return arg
 
-try:
-    import urllib.parse
-    unquote = urllib.parse.unquote
-except:
-    import urllib
-    unquote = urllib.unquote
+class html:
+    @staticmethod
+    def escape(arg):
+        return arg
+
+unquote = urllib.unquote
 
 ## FIXME bad name: how is one "channel" of a strereo stream called?
 class SinkChannel():
@@ -190,9 +183,9 @@ class AbstractSink():
         return int(self.get_index())
 
     def get_owner_module(self):
-         if "owner_module" in self.props:
+        if "owner_module" in self.props:
             return self.props["owner_module"]
-         return None
+        return None
 
     def has_monitor(self):
         if "has_monitor" in self.props:
@@ -229,7 +222,7 @@ class SinkInfo(AbstractSink):
             self.pulse_proxy.set_sink_mute(self.index, True)
 
     def set_port(self, portstr):
-         self.pulse_proxy.set_sink_port(self.index,portstr)
+        self.pulse_proxy.set_sink_port(self.index,portstr)
 
     def toggle_monitor(self):
         self.pulse_proxy.toggle_monitor_of_sink(self.index, self.get_monitor_name())
@@ -256,7 +249,6 @@ class SinkInfo(AbstractSink):
         self._nice_text =  ""
         self._nice_title = self.name
         self._nice_icon = self.DEFAULT_ICON
-        text = ""
         try:
             self._nice_title = self.props["device_name"]
         except:
@@ -364,7 +356,7 @@ class SourceInfo(AbstractSink):
             self.pulse_proxy.set_source_mute(self.index, True)
 
     def set_port(self, portstr):
-         self.pulse_proxy.set_source_port(self.index,portstr)
+        self.pulse_proxy.set_source_port(self.index,portstr)
 
     def toggle_monitor(self):
         self.pulse_proxy.toggle_monitor_of_source(self.index, self.get_monitor_name())
@@ -443,14 +435,14 @@ class CardProfile:
 
 class CardInfo:
     def __init__(self, index, name, properties, active_profile_name, profiles_dict):
-         self.index = index
-         self.name = name
-         self.properties = properties
-         self.active_profile_name = active_profile_name
-         self.profiles_dict = profiles_dict
-         self.profiles = []
-         for key in list(self.profiles_dict.keys()):
-             self.profiles.append(CardProfile(key, self.profiles_dict[key] ))
+        self.index = index
+        self.name = name
+        self.properties = properties
+        self.active_profile_name = active_profile_name
+        self.profiles_dict = profiles_dict
+        self.profiles = []
+        for key in list(self.profiles_dict.keys()):
+            self.profiles.append(CardProfile(key, self.profiles_dict[key] ))
 
     def get_property(self,key):
         if self.properties == None:
@@ -586,7 +578,6 @@ class ModuleInfo:
 
     def set_ladspa_sink(self, values, pa_sink_proxy):
         control = ""
-        effect = self.get_ladspa_effect_settings()
         i = 0
 
         # multiply (visible) values with scale

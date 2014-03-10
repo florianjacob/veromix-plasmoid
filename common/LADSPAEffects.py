@@ -14,17 +14,11 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import os,re,math,shutil
+import os,re,shutil,commands
 
 _presets = None
 
-try:
-    import commands
-    getstatusoutput = commands.getstatusoutput
-except:
-    import subprocess
-    getstatusoutput = subprocess.getstatusoutput
-
+getstatusoutput = commands.getstatusoutput
 
 class LADSPAPresetLoader:
     configdir = "/usr/share/veromix/data"
@@ -122,7 +116,6 @@ class LADSPAPresetLoader:
 
     def listdir_fullpath(self, directory):
         if os.path.exists(directory):
-            dir_list = os.listdir(directory)
             return [os.path.join(directory, x) for x in os.listdir(directory) if x.endswith('.preset')]
         return []
 
@@ -135,7 +128,7 @@ class LADSPAPresetLoader:
 
     def write_preset(self, plugin_settings):
         if not os.path.exists(self.get_user_preset_directory()):
-            os.path.mkdir(self.get_user_preset_directory())
+            os.mkdir(self.get_user_preset_directory())
 
         f = open(self.preset_full_path(str(plugin_settings["preset_name"])), "w")
         rawdata = []
@@ -163,7 +156,6 @@ class LADSPAPresetLoader:
             f.write(str(i)+'\n')
         f.close()
 
-        found = False
         self.presets(True)
 
 _effects = None
@@ -195,15 +187,13 @@ class LADSPAEffects:
 
     def write_blacklist(self, blacklist):
         f = open(self.blacklist_file, "w")
-        rawdata = []
         for entry in blacklist:
             f.write(str(entry)+'\n')
         f.close()
         self.effects(True)
 
     def ladspa_sdk_available(self):
-        status,output = getstatusoutput("listplugins")
-        #status2, output = commands.getstatusoutput("analyseplugin")
+        status = getstatusoutput("listplugins")
         return status == 0
 
 def fetch_plugins():

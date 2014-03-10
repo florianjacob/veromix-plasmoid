@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import signal, os, datetime, dbus
+import os, datetime, dbus
 #from veromixcommon.PulseProxyObjects import *
 
 ##
@@ -182,7 +182,7 @@ class Mpris2MediaPlayer(MediaPlayer):
             if status == 'Playing':
                 self.set_state(MediaPlayer.Playing)
             else:
-                 self.set_state(MediaPlayer.Paused)
+                self.set_state(MediaPlayer.Paused)
             if old_state != self.state():
                 changed = True
 
@@ -199,7 +199,7 @@ class Mpris2MediaPlayer(MediaPlayer):
                 if val != self._cover_string:
                     changed = True
                     if (os.path.isfile(val)):
-                       self.set_artwork(self.create_pixmap(val))
+                        self.set_artwork(self.create_pixmap(val))
                     else:
                         self.set_artwork(None)
                     self._cover_string = val

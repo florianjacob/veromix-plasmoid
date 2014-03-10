@@ -15,15 +15,15 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 
-import sys, os
+import sys, os, commands
+from xdg import BaseDirectory
+
 try:
-    from xdg import BaseDirectory
     _XDG_SERVICE_DIR = BaseDirectory.xdg_data_home + "/dbus-1/services/"
 except:
     _XDG_SERVICE_DIR = os.path.expanduser("~/.local/share/dbus-1/services/")
 
 try:
-    from xdg import BaseDirectory
     _XDG_CONFIG_DIR = BaseDirectory.xdg_config_home + "/veromix/"
 except:
     _XDG_CONFIG_DIR = os.path.expanduser("~/.config/veromix/")
@@ -38,7 +38,7 @@ def createDbusServiceDescription(path, use_qt):
     # File to create
     fn = service_dir+"org.veromix.pulseaudio.qt.service"
     if not use_qt:
-       fn = service_dir+"org.veromix.pulseaudio.glib.service"
+        fn = service_dir+"org.veromix.pulseaudio.glib.service"
 
     exec_dir = str(path)
 
@@ -59,12 +59,8 @@ def createDbusServiceDescription(path, use_qt):
     except:
         print ("Problem writing to file: " + fn)
         print ("Unexpected error:", sys.exc_info()[0])
-    try:
-        import subprocess
-        subprocess.getstatusoutput("chmod u+x "+exec_dir)
-    except:
-        import commands
-        commands.getstatusoutput("chmod u+x "+exec_dir)
+        
+    commands.getstatusoutput("chmod u+x "+exec_dir)
 
 def createDirectory(d):
     if not os.path.isdir(d):
