@@ -34,27 +34,29 @@
 ###### 2009 - 2012
 
 
-import commands,dbus
+import commands,dbus, os
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyKDE4.kdecore import i18n
 from PyQt4 import uic
+from PyQt4.QtCore import QString, QObject, QVariant, QSize, QTimer, Qt, SIGNAL
+from PyQt4.QtCore import pyqtSignal, pyqtSlot, pyqtSignature
+from PyQt4.QtGui import QWidget, QSpinBox, QLabel, QComboBox, QCheckBox, QSizePolicy
+from PyQt4.QtGui import QSpacerItem, QGridLayout, QListWidget, QListWidgetItem
+from PyQt4.QtGui import QGraphicsLinearLayout, QGraphicsWidget
 from PyKDE4 import plasmascript
+from PyKDE4.kdecore import KGlobal
 from PyKDE4.plasma import Plasma
 from PyKDE4.kdeui import KIcon
 from PyKDE4.kdeui import KActionCollection
 from PyKDE4.kdeui import KAction
 from PyKDE4.kdeui import KShortcut
 from PyKDE4.kdeui import KKeySequenceWidget
-from PyKDE4.kdeui import KPageDialog
-from PyKDE4.kdeui import KDialog
-from PyKDE4.kdecore import *
 
 from VeroMix import VeroMix
 from NowPlaying import NowPlayingController
 from veromixcommon.LADSPAEffects import LADSPAEffects
 from veromixcommon.LADSPAEffects import LADSPAPresetLoader
-from veromixcommon.Utils import *
+from veromixcommon.Utils import pixmapFromSVG, createDbusServiceDescription
 
 COMMENT=i18n("Veromix is a mixer for the Pulseaudio sound server. ")
 
