@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-from PyQt4.QtGui import *
+from PyQt4.QtGui import QGraphicsLinearLayout
 from SinkInputUI import InputSinkUI
 from SinkInputUI import SinkUI
 from SinkMbeqUI import SinkMbeqUI
@@ -206,6 +206,6 @@ class SortedLayout(QGraphicsLinearLayout):
         return sorting
 
     def _sort_by_attribute(self, objects,sortAttrib):
-        nlist = map(lambda object, sortAttrib=sortAttrib: (getattr(object, sortAttrib),object), objects)
+        nlist = map(lambda obj, sortAttrib=sortAttrib: (getattr(obj, sortAttrib),object), objects)
         nlist.sort(reverse=self.reverse)
-        return map(lambda (key, object): object, nlist)
+        return map(lambda (key, obj): obj, nlist)

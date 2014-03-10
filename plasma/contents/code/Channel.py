@@ -14,20 +14,19 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import datetime, urllib
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
-from PyKDE4.kdeui import *
+import urllib
+from PyQt4.QtCore import Qt, SIGNAL, QEvent, QObject
+from PyQt4.QtGui import QSizePolicy, QAction, QMenu, QCursor, QGraphicsWidget
+from PyQt4.QtGui import QGraphicsLinearLayout
 from PyKDE4.plasma import Plasma
 from PyKDE4.kdecore import i18n
 
 from LabelSlider import MeterSlider
 from MuteButton  import MuteButton
-from ClickableMeter import ClickableMeter
 from SinkChannelWidget import SinkChannelWidget
 from veromixcommon.LADSPAEffects import LADSPAEffects
 from veromixcommon.LADSPAEffects import LADSPAPresetLoader
-from veromixcommon.Utils import *
+from veromixcommon.Utils import in_unicode
 
 class Channel(QGraphicsWidget):
 

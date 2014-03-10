@@ -14,18 +14,16 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import dbus,  os, datetime
-
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
-from PyKDE4.kdeui import *
+from PyQt4.QtGui import QSizePolicy, QPixmap, QIcon 
+from PyQt4.QtGui import QGraphicsLinearLayout, QGraphicsWidget, QAction
+from PyQt4.QtCore import QSizeF, Qt, SIGNAL
+from PyKDE4.kdecore import i18n
 from PyKDE4.plasma import Plasma
-
-from LabelSlider import LabelSlider
+from PyKDE4.kdeui import KIcon
 from LabelSlider import Label
 from Channel import Channel
-from MuteButton  import *
-from veromixcommon.MediaPlayer import *
+from MuteButton  import MuteButton
+from veromixcommon.MediaPlayer import MediaPlayer
 
 
 class MediaPlayerUI(Channel):

@@ -15,11 +15,10 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
-from PyKDE4.kdeui import *
+from PyQt4.QtCore import pyqtSignal, QObject, QUrl, QTimer
+from PyQt4.QtGui import QPixmap
 
-from veromixcommon.MediaPlayer import *
+from veromixcommon.MediaPlayer import Mpris2MediaPlayer
 
 class Mpris2MediaPlayerQt(QObject, Mpris2MediaPlayer):
     

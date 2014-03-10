@@ -15,11 +15,11 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
-from PyKDE4.kdeui import *
+from PyQt4.QtCore import QString, QObject, pyqtSignal
+from PyQt4.QtGui import QIcon, QPixmap
+from PyKDE4.kdeui import KIcon
 
-from veromixcommon.MediaPlayer import *
+from veromixcommon.MediaPlayer import MediaPlayer
 
 class NowPlayingController(QObject, MediaPlayer):
 

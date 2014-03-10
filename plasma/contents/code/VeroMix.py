@@ -15,17 +15,15 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import datetime, dbus
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt4.QtCore import pyqtSignal, Qt, SIGNAL, QTimer
+from PyQt4.QtGui import QSizePolicy, QGraphicsWidget, QGraphicsLinearLayout
 from PyKDE4.plasma import Plasma
 from PyKDE4.kdeui import KIcon
-from PyKDE4.kdecore import *
+from PyKDE4.kdecore import i18n
 
 from PulseAudioProxy import PulseAudio
 from SortedLayout import SortedLayout
 from LockableScrollWidget import LockableScrollWidget
-from SinkUI import SinkUI
-from SinkInputUI import InputSinkUI
 from SourceUI import SourceUI
 from SourceOutputUI import SourceOutputUI
 from MediaPlayerUI import MediaPlayerUI
@@ -211,13 +209,13 @@ class VeroMix(QGraphicsWidget):
             self.source_panel.hide()
             self.scrolled_panel_layout.removeItem(self.source_panel)
 
- ## callbacks source output
+## callbacks source output
 
     def on_source_output_info(self,  sink):
         key = "sourceoutput" + str(sink.index)
         if not self.update_channel(key ,sink, self.source_panel_layout):
             widget =  SourceOutputUI(  self)
-           # FIXME sliders want to be visible when added, else we get a crash
+            # FIXME sliders want to be visible when added, else we get a crash
             self.setSourcesPanelVisible(True)
             self.add_channel(key, widget , sink, self.source_panel_layout)
 
@@ -226,13 +224,13 @@ class VeroMix(QGraphicsWidget):
         self.setSourcesPanelVisible(True)
         self.remove_channel("sourceoutput" + str(index), self.source_panel_layout)
 
- ## callbacks source
+## callbacks source
 
     def on_source_info(self,  sink):
         key = "source" + str(sink.index)
         if not self.update_channel(key ,sink, self.source_panel_layout):
             widget =  SourceUI(self)
-           # FIXME sliders want to be visible when added, else we get a crash
+            # FIXME sliders want to be visible when added, else we get a crash
             self.setSourcesPanelVisible(True)
             self.add_channel(key, widget , sink, self.source_panel_layout)
 
@@ -241,7 +239,7 @@ class VeroMix(QGraphicsWidget):
         self.setSourcesPanelVisible(True)
         self.remove_channel("source" + str(index), self.source_panel_layout)
 
- ## callbacks sink
+## callbacks sink
 
     def on_sink_info(self,sink):
         key = "sink" + str(sink.index)
@@ -266,7 +264,7 @@ class VeroMix(QGraphicsWidget):
         self.remove_channel("sink" + str(index), self.sink_panel_layout)
         self.sinkOutputChanged.emit()
 
- ## callbacks sink input
+## callbacks sink input
 
     def on_sink_input_info(self,  sink):
         if sink.props["driver"]=="module-combine-sink.c":
@@ -279,7 +277,7 @@ class VeroMix(QGraphicsWidget):
     def on_remove_sink_input(self, index):
         self.remove_channel("sinkinput" + str(index), self.sink_panel_layout)
 
- ## callbacks card info
+## callbacks card info
     def on_card_info(self, info):
         self.card_infos[info.name] = info
         #info.printDebug()

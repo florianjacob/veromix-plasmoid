@@ -14,16 +14,11 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
-from PyKDE4.kdeui import *
-from PyKDE4.plasma import Plasma
+from PyQt4.QtCore import SIGNAL
+from PyQt4.QtGui import QSizePolicy
 
-import signal, os, datetime
-from LabelSlider import *
-from Channel import *
-from MuteButton  import *
-from ClickableMeter import *
+from Channel import Channel
+from MuteButton  import InputMuteButton
 
 class SourceUI( Channel ):
     def __init__(self , parent):

@@ -14,14 +14,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 import datetime
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt4.QtCore import pyqtSignal, SIGNAL, Qt
+from PyQt4.QtGui import QSlider, QSizePolicy, QGraphicsLinearLayout, QGraphicsWidget
 from PyKDE4.plasma import Plasma
-from PyKDE4 import plasmascript
-from PyKDE4.kdeui import *
-from PyKDE4.kdecore import *
-from PyKDE4.kdecore import *
-from PyKDE4.plasma import *
 
 class Label(Plasma.Label):
     volumeChanged = pyqtSignal(int)
@@ -254,14 +249,15 @@ class MeterSlider(QGraphicsWidget):
                 del self.meter
                 self.meter = None
         self._resize_widgets()
-
-    def installEventFilter(self, filter):
-        self.event_filter = filter
-        self.slider.installEventFilter(filter)
-        self.slider.label.installEventFilter(filter)
+        
+# filt instead of filter (a python built-in assignment)
+    def installEventFilter(self, filt):
+        self.event_filter = filt
+        self.slider.installEventFilter(filt)
+        self.slider.label.installEventFilter(filt)
         if self.meter:
-            self.meter.installEventFilter(filter)
-        QGraphicsWidget.installEventFilter(self, filter)
+            self.meter.installEventFilter(filt)
+        QGraphicsWidget.installEventFilter(self, filt)
 
     def set_focus(self):
         self.slider.set_focus()

@@ -14,15 +14,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
 from PyKDE4.plasma import Plasma
-from PyKDE4 import plasmascript
-from PyKDE4.kdeui import *
-from PyKDE4.kdecore import *
-from PyKDE4.kdecore import *
-from PyKDE4.plasma import *
-import sys
 
 class LockableScrollWidget(Plasma.ScrollWidget):
 

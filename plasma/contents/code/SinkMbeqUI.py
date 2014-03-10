@@ -14,16 +14,15 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import signal, os, datetime, urllib
+import datetime, urllib
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
-from PyKDE4.kdeui import *
+from PyQt4.QtCore import QTimer, Qt, pyqtSignal
+from PyQt4.QtGui import QAction, QSizePolicy, QGraphicsWidget, QGraphicsLinearLayout
+from PyKDE4.kdecore import i18n
 from PyKDE4.plasma import Plasma
-
 from SinkUI import SinkUI
-from LabelSlider import *
-from veromixcommon.LADSPAEffects import *
+from LabelSlider import Label, VerticalSlider
+from veromixcommon.LADSPAEffects import LADSPAEffects, LADSPAPresetLoader
 
 class SinkMbeqUI(SinkUI):
     muteInfo = pyqtSignal(bool)

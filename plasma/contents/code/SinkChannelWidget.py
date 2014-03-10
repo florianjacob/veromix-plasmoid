@@ -15,9 +15,8 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 from PyKDE4.plasma import Plasma
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
-from PyKDE4.kdeui import *
+from PyQt4.QtCore import Qt
+from PyQt4.QtGui import QGraphicsWidget, QSizePolicy, QGraphicsLinearLayout
 
 from LabelSlider import LabelSlider
 
@@ -124,14 +123,14 @@ class SinkChannelWidget(QGraphicsWidget):
         # else we get infinite loops
         self.sink.on_step_volume(event.delta() > 0)
 
-    def installEventFilter(self, filter):
-        if filter:
-            self.event_filter = filter
+    def installEventFilter(self, filt):
+        if filt:
+            self.event_filt = filt
         for slider in self.sliders:
-            slider.installEventFilter(filter)
-        self.label.installEventFilter(filter)
-        self.slider_widget.installEventFilter(filter)
-        QGraphicsWidget.installEventFilter(self,filter)
+            slider.installEventFilter(filt)
+        self.label.installEventFilter(filt)
+        self.slider_widget.installEventFilter(filt)
+        QGraphicsWidget.installEventFilter(self,filt)
 
     def set_focus(self):
         # FIXME

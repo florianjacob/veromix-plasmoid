@@ -15,9 +15,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 from PyKDE4.plasma import Plasma
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
-from PyKDE4.kdeui import *
+from PyQt4.QtCore import SIGNAL
 
 class ClickableMeter(Plasma.Meter):
 

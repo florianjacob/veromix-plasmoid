@@ -14,11 +14,10 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import signal
-import dbus.mainloop.qt
-from PyQt4.QtCore import *
+import dbus.mainloop
+from PyQt4.QtCore import SIGNAL, QString, QObject
 
-from veromixcommon.PulseProxyObjects import *
+from veromixcommon.PulseProxyObjects import SourceOutputInfo, SinkInfo, CardInfo, SourceInfo, SinkInputInfo
 from Mpris2MediaPlayerQt import Mpris2MediaPlayerQt
 
 class PulseAudio(QObject):
