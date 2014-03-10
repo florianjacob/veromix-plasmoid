@@ -25,7 +25,7 @@ class PulseAudioDBus(QObject):
 
     #def __init__(self, sessionBus):
         #QObject.__init__(self)
-        #self.call_manager_obj = sessionBus.get_object("org.veromix.pulseaudioservice","/org/veromix/pulseaudio")
+        #self.call_manager_obj = sessionBus.get_object("org.veromix.pulseaudio.service","/org/veromix/pulseaudio")
         #self.call_manager = dbus.Interface(self.call_manager_obj, dbus_interface='org.veromix.notification' )
         #self.connectToSignals()
 
@@ -37,7 +37,7 @@ class PulseAudioDBus(QObject):
 
     def __init__(self):
         bus = dbus.SessionBus()
-        pa_obj  = bus.get_object("org.veromix.pulseaudioservice","/org/veromix/pulseaudio")
+        pa_obj  = bus.get_object("org.veromix.pulseaudio.service","/org/veromix/pulseaudio")
         interface = dbus.Interface(pa_obj,dbus_interface="org.veromix.notification")
         interface.connect_to_signal("sink_input_info", self.sink_input_info)
         interface.connect_to_signal("sink_info", self.sink_info)
