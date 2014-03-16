@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import signal, os, datetime, urllib
+import datetime, urllib
 
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *

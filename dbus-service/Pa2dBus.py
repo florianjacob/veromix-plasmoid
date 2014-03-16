@@ -15,15 +15,8 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import signal
 import datetime
-import dbus
-import dbus.service
 
-#from PyQt4.QtCore import QObject
-#from PyQt4.QtCore import SIGNAL
-
-#from PyQt4 import QtCore
 from VeromixUtils import *
 
 ###
@@ -38,26 +31,6 @@ class Pa2dBus():
         self.METER_SEND_MSECS = 100000 #micro
         self.last_volume_meter_send = datetime.datetime.now()
         self.last_source_meter_send = datetime.datetime.now()
-#        self.connect(self.pulse, SIGNAL("sink_info(PyQt_PyObject)"), self.on_sink_info)
-#        self.connect(self.pulse, SIGNAL("sink_remove(int)"), self.on_remove_sink)
-
-#        self.connect(self.pulse, SIGNAL("sink_input_info(PyQt_PyObject)"), self.on_sink_input_info)
-#        self.connect(self.pulse, SIGNAL("sink_input_remove(int)"), self.on_remove_sink_input)
-
-#        self.connect(self.pulse, SIGNAL("source_info(PyQt_PyObject)"), self.on_source_info)
-#        self.connect(self.pulse, SIGNAL("source_remove(int)"), self.on_remove_source)
-
-#        self.connect(self.pulse, SIGNAL("source_output_info(PyQt_PyObject)"), self.on_source_output_info)
-#        self.connect(self.pulse, SIGNAL("source_output_remove(int)"), self.on_remove_source_output)
-
-#        self.connect(self.pulse, SIGNAL("volume_meter_sink_input(int, float )"), self.on_volume_meter_sink_input)
-#        self.connect(self.pulse, SIGNAL("volume_meter_sink(int, float )"), self.on_volume_meter_sink)
-#        self.connect(self.pulse, SIGNAL("volume_meter_source(int, float )"), self.on_volume_meter_source)
-
-#        self.connect(self.pulse, SIGNAL("card_info(PyQt_PyObject)"), self.on_card_info)
-#        self.connect(self.pulse, SIGNAL("card_remove(int)"), self.on_remove_card)
-
-#        self.connect(self.pulse, SIGNAL("module_info(int, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)"), self.on_module_info)
 
     def on_source_info(self, sink):
         index =   int(sink.index)

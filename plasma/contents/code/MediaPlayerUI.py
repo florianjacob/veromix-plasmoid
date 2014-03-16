@@ -21,10 +21,9 @@ from PyQt4.QtGui import *
 from PyKDE4.kdeui import *
 from PyKDE4.plasma import Plasma
 
-from LabelSlider import LabelSlider
 from LabelSlider import Label
 from Channel import Channel
-from MuteButton  import *
+from MuteButton import *
 from veromixcommon.MediaPlayer import *
 
 

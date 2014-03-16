@@ -24,8 +24,6 @@ from PyKDE4.kdecore import *
 from PulseAudioProxy import PulseAudio
 from SortedLayout import SortedLayout
 from LockableScrollWidget import LockableScrollWidget
-from SinkUI import SinkUI
-from SinkInputUI import InputSinkUI
 from SourceUI import SourceUI
 from SourceOutputUI import SourceOutputUI
 from MediaPlayerUI import MediaPlayerUI

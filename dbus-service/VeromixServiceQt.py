@@ -21,7 +21,6 @@ import dbus
 import dbus.service
 import dbus.mainloop.qt
 
-from PyQt4.QtCore import QCoreApplication
 from PyQt4 import QtCore
 
 from pulseaudio.PulseAudio import *
@@ -31,7 +30,7 @@ from Pa2dBus import *
 
 
 if __name__ == '__main__':
-    app=QtCore.QCoreApplication(sys.argv)
+    app = QtCore.QCoreApplication(sys.argv)
     signal.signal(signal.SIGINT, signal.SIG_DFL)
     mainloop = dbus.mainloop.qt.DBusQtMainLoop(set_as_default=True)
     conn = dbus.SessionBus()
@@ -40,7 +39,7 @@ if __name__ == '__main__':
     dbus.set_default_main_loop(mainloop)
 
     pulse = PulseAudio()
-    bus = VeromixDbus(pulse,conn)
+    bus = VeromixDbus(pulse, conn)
     i = Pa2dBus(bus, pulse)
     event_processor = VeromixEvent(i)
     pulse.set_receiver(event_processor)

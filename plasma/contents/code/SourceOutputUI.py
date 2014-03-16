@@ -17,12 +17,10 @@
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 from PyKDE4.kdeui import *
-from PyKDE4.plasma import Plasma
 
-import signal, os, datetime
 from LabelSlider import *
 from Channel import *
-from MuteButton  import *
+from MuteButton import *
 from ClickableMeter import *
 
 class SourceOutputUI( Channel ):

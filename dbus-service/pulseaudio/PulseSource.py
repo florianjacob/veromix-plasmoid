@@ -19,9 +19,7 @@
 from .lib_pulseaudio import *
 
 from .PulseClient import PulseClient
-from .PulseClient import PulseClientCtypes
 from .PulseVolume import PulseVolumeCtypes
-from .PulseVolume import PulseVolume
 from VeromixUtils import *
 
 # This class contains all commons features from PulseSourceInputInfo and

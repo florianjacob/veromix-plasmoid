@@ -80,7 +80,7 @@ def pixmapFromSVG( name):
         svg = Plasma.Svg()
         svg.setImagePath("icons/audio")
         if not svg.isValid():
-            return KIcon(name).pixmap(22,22)
+            return KIcon(name).pixmap(22, 22)
         svg.setContainsMultipleImages(False)
         return svg.pixmap(name)
 
@@ -109,4 +109,4 @@ def in_unicode(string):
                 return "problem with string decoding"
     return "problem with string decoding"
 
-  
+

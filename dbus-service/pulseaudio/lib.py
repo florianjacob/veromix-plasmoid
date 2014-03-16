@@ -29,8 +29,6 @@
 # POSSIBILITY OF SUCH DAMAGE.
 
 
-import os
-import re
 import sys
 
 import ctypes

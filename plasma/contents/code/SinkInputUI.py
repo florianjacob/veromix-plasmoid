@@ -17,14 +17,11 @@
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 from PyKDE4.kdeui import *
-from PyKDE4.plasma import Plasma
-
-import signal, os, datetime
 
 from LabelSlider import *
 from SinkUI import *
 from Channel import *
-from MuteButton  import InputMuteButton
+from MuteButton import InputMuteButton
 
 class InputSinkUI(SinkUI):
 

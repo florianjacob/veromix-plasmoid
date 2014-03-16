@@ -46,8 +46,6 @@ from PyKDE4.kdeui import KActionCollection
 from PyKDE4.kdeui import KAction
 from PyKDE4.kdeui import KShortcut
 from PyKDE4.kdeui import KKeySequenceWidget
-from PyKDE4.kdeui import KPageDialog
-from PyKDE4.kdeui import KDialog
 from PyKDE4.kdecore import *
 
 from VeroMix import VeroMix

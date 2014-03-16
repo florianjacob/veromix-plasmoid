@@ -17,7 +17,6 @@
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 from PyKDE4.plasma import Plasma
-from PyKDE4 import plasmascript
 from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 from PyKDE4.kdecore import *
