@@ -32,7 +32,7 @@ except:
 def createDbusServiceDescription(path, use_qt):
     if "usr/share/veromix" in os.path.realpath(__file__):
         return True
-    print ("Outputting dbus-servie file")
+    print ("Outputting dbus-service file")
     service_dir = os.path.join(_XDG_SERVICE_DIR)
     createDirectory(service_dir)
     # File to create
