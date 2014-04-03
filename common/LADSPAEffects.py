@@ -167,7 +167,15 @@ class LADSPAPresetLoader:
         self.presets(True)
 
 _effects = None
+
+
+def assure_path_exists(path):
+	dir = os.path.dirname(path)
+	if not os.path.exists(dir):
+		os.makedir(dir)
+
 class LADSPAEffects:
+
     configpath = os.getenv('HOME') + ".veromix"
     assure_path_exists(configpath)
     blacklist_file = os.getenv('HOME') + ".veromix/veromix-ladspa-blacklist.conf"
@@ -246,10 +254,6 @@ def fetch_plugins():
         return hardcoded_plugins()
     return plugins
 
-def assure_path_exists(path):
-  dir = os.path.dirname(path)
-  if not os.path.exists(dir):
-  os.makedir(dir)
 
 def extract_plugin(filename, lines):
     definition = {
