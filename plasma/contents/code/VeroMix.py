@@ -449,7 +449,8 @@ class VeroMix(QGraphicsWidget):
         self.applet.showMessage(icon, message, Plasma.ButtonOk)
 
     def doExit(self):
-        for i in self.sink_panel_layout.getChannels().values():
+        self.pa.blockSignals(True)
+	for i in self.sink_panel_layout.getChannels().values():
             # if a slider is not visible, plasmoidviewer crashes if the slider is not removed before exit... (dont ask me)
             i.removeSlider()
         for i in self.source_panel_layout.getChannels().values():
