@@ -176,9 +176,9 @@ def assure_path_exists(path):
 
 class LADSPAEffects:
 
-    configpath = os.getenv('HOME') + ".veromix/"
+    configpath = os.path.join(os.getenv('HOME'), ".veromix")
     assure_path_exists(configpath)
-    blacklist_file = configpath + "ladspa-blacklist.conf"
+    blacklist_file = os.path.join(configpath, "ladspa-blacklist.conf")
 
     def effects(self, do_reload=False):
         global _effects
