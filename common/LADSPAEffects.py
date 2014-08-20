@@ -169,17 +169,13 @@ class LADSPAPresetLoader:
 _effects = None
 
 
-def assure_path_exists(path):
-	dir = os.path.dirname(path)
-	if not os.path.exists(dir):
-		os.mkdir(dir)
+
 
 class LADSPAEffects:
-
-    configpath = os.path.join(os.getenv('HOME'), ".veromix")
-    assure_path_exists(configpath)
+    
+    configpath = os.path.join(os.getenv('HOME'), ".config/pulse")
     blacklist_file = os.path.join(configpath, "ladspa-blacklist.conf")
-
+      
     def effects(self, do_reload=False):
         global _effects
         if _effects == None or do_reload:
