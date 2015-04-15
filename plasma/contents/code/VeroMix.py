@@ -96,6 +96,7 @@ class VeroMix(QGraphicsWidget):
             self.scrolled_panel_layout.addItem(self.sink_panel)
         else:
             scrolled_panel = Plasma.TabBar()
+            scrolled_panel.currentChanged.connect(lambda index: self.adjustSize())
             scrolled_panel.addTab(i18n("Playback"), self.sink_panel)
             scrolled_panel.addTab(i18n("Record"), self.source_panel)
             self.source_panel.show()
