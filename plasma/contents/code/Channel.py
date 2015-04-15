@@ -328,6 +328,7 @@ class Channel(QGraphicsWidget):
             self.slider.update_with_info(info)
         if self.extended_panel:
             self.extended_panel.update_with_info(info)
+
         self.update()
 
     def update_label(self):

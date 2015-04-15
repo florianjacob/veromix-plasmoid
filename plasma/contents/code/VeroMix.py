@@ -227,13 +227,19 @@ class VeroMix(QGraphicsWidget):
 
  ## callbacks source
 
-    def on_source_info(self,  sink):
-        key = "source" + str(sink.index)
-        if not self.update_channel(key ,sink, self.source_panel_layout):
+    def on_source_info(self,  source):
+        # ignore infos on monitor sources when configured. This info is only sent at the start or at changes,
+        # so the setting only takes effect for new devices and after a restart.
+        # dynamically hiding / unhiding monitor channels turned out to be impractical.
+        if self.should_hide_monitors() and "device.class" in source.props.keys() and source.props["device.class"]  == "monitor":
+            return
+
+        key = "source" + str(source.index)
+        if not self.update_channel(key ,source, self.source_panel_layout):
             widget =  SourceUI(self)
            # FIXME sliders want to be visible when added, else we get a crash
             self.setSourcesPanelVisible(True)
-            self.add_channel(key, widget , sink, self.source_panel_layout)
+            self.add_channel(key, widget , source, self.source_panel_layout)
 
     def on_remove_source(self, index):
         # FIXME sliders want to be visible when added, else we get a crash
@@ -427,6 +433,9 @@ class VeroMix(QGraphicsWidget):
 
     def is_meter_visible(self):
         return self.applet.is_meter_visible()
+
+    def should_hide_monitors(self):
+        return self.applet.should_hide_monitors()
 
     def is_expander_enabled(self):
         return self.applet.is_expander_enabled()

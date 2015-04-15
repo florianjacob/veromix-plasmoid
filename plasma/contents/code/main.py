@@ -265,6 +265,9 @@ class VeroMixPlasmoid(plasmascript.Applet):
         self.config_ui.meter_visible.setChecked(self.is_meter_visible())
         self.config_ui.meter_visible.stateChanged.connect(parent.settingsModified)
 
+        self.config_ui.hide_monitors.setChecked(self.should_hide_monitors())
+        self.config_ui.hide_monitors.stateChanged.connect(parent.settingsModified)
+
         self.config_ui.expander_enabled.setChecked(self.is_expander_enabled())
         self.config_ui.expander_enabled.stateChanged.connect(parent.settingsModified)
 
@@ -436,6 +439,7 @@ class VeroMixPlasmoid(plasmascript.Applet):
             self.config().writeEntry("always_show_sources", bool(self.config_ui.always_show_sources.isChecked()))
 
             self.config().writeEntry("meter_visible", bool(self.config_ui.meter_visible.isChecked()))
+            self.config().writeEntry("hide_monitors", bool(self.config_ui.hide_monitors.isChecked()))
             self.config().writeEntry("expander_enabled", bool(self.config_ui.expander_enabled.isChecked()))
             self.config().writeEntry("unitvalues_visible", bool(self.config_ui.unitvalues_visible.isChecked()))
 
@@ -529,6 +533,9 @@ class VeroMixPlasmoid(plasmascript.Applet):
 
     def is_meter_visible(self):
         return self.config().readEntry("meter_visible",False).toBool()
+
+    def should_hide_monitors(self):
+        return self.config().readEntry("hide_monitors",True).toBool()
 
     def get_auto_mute(self):
         return self.config().readEntry("auto_mute",False).toBool()
